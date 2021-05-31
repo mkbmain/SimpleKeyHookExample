@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
                         return -1;
                     case Keys.C:
                         SendKeys.Send("❤");
-                        return -1; // this will return a -1 which will not send
+                        return -1; // this will return a -1 whQich will not send
                     case Keys.D:
                         SendKeys.Send("😒");
                         return -1;
@@ -47,7 +47,10 @@ namespace WindowsFormsApp1
                 return -1;
             }
 
-
+            if (Shift && key == Keys.Q)
+            {
+                Application.Exit();
+            }
 
             return defaultResponse;         // if you look in keyboardhook.cs the default response is  CallNextHookEx(HookID, Code, W, L) which will send it to next window i.e the window your on 
 
